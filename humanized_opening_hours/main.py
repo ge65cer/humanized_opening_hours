@@ -192,10 +192,10 @@ class SolarHours(dict):
         
         >>> solar_hours[datetime.date.today()] = {...}
         """
-        if isinstance(location, astral.Location):
+        if isinstance(location, astral.LocationInfo):
             self.location = location
         elif isinstance(location, tuple):
-            self.location = astral.Location(
+            self.location = astral.LocationInfo(
                 ["Location", "Region", *location]
             )
         elif isinstance(location, str):
